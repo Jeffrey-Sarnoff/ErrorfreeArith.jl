@@ -2,15 +2,29 @@
 errorfree transformations and other arithmetic mappings of like accuracy
 ```ruby
                                                        Jeffrey Sarnoff © 2016-Mar-22 in New York City
+                                                                         2016-Jun-25 at v"0.1.0"
 ```
+#### Nomenclature
+
+The name of each exported function begins with a thrice lettered acronym.  This prefix classifies the accuracy of the evaluand into one of two sorts:  
+    
+    sortal                | prefix | acronym                        | semantics (!rigourous review needed!)      |
+    ----------------------|--------|--------------------------------|------------------------------------------|
+    evaluates errorfree   |  eft   | `E`rror`F`ree `T`ransformation | RoundNearest using 24/53 extra bits        |
+    evaluates accurately  |  acc   | `ACC`urate rounding          | \|ans-ideal\|/ans <= 2 \* eps(ans)  |
+    
+
 #### Exports
-  eftIncr, eftDecr, eftSqr, eftRecip,   # 1 arg  
-  accSqrt, accSqrtForSign,  
-  eftAdd, eftSub, eftMul, eftDiv,       # 2 args  
-  eftAddGTE, eftSubGTE, eftDivApprox,
-  eftAddAs2, eftMulAs4, eftMulAs2,      # 3 args (also eftAdd, eftAddGTE, eftMul)  
+```julia
+  eftIncr, eftDecr, eftSqr,                   # 1 arg  
+  accSqrt, accSqrtForSign, accInv,  
+  eftAdd, eftSub, eftMul, accDiv,             # 2 args  
+  eftAddGTE, eftSubGTE, accDivForSign,
+  eftAddGTE, eftAddGTEas2, eftAdd, eftAddAs2, # 3 args  
+  eftMul, eftMulAs3, eftMulAs2,           
   eftFMA, eftFMA, eftFMAas2, eftFMSas2,  
-  eftAddAs3, eftAddGTEas3               # 4 args (also eftAdd, eftAddGTE)
+  eftAddGTE, eftAddGTEas3, eftAdd, eftAddAs3  # 4 args
+```
 
 #### Use
 ```julia

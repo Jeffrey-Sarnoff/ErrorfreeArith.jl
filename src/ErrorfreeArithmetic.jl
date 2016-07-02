@@ -4,7 +4,7 @@ import Base: (+),(-),(*),(/),fma,sqrt
 
 export HasFMAonChip,
        eftIncr, eftDecr, eftSqr, eftRecip,   # single
-       accInv, accSqrt, accSqrtForSign,
+       accInv, accInvForSign, accSqrt, accSqrtForSign,
        eftAdd, eftSub, eftMul, accDiv,       # double
        eftAddGTE, eftAddLTE, eftSubGTE, accDivForSign,
        eftAddAs2, eftMulAs4, eftMulAs2,      # triple (also eftAdd, eftAddGTE, eftMul)

@@ -30,6 +30,12 @@ function accInv{T<:StdFloat}(b::T)
     hi,lo
 end
 
+# for use when the sign of the part is all that is needed of the lo part
+function accInvForSign{T<:StdFloat}(b::T)
+    hi = one(T)/b          # hi has the sign of b
+    loapprox = fma(-b,hi,one(T))
+    hi, loapprox
+end
 
 function accSqrt{T<:StdFloat}(a::T)
     hi = sqrt(a)
