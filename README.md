@@ -40,7 +40,7 @@ loPart == Float64((big(12345.0)+big(0.12345)) - big(hiPart)) # true
 
 
 ```
-###Notes
+### Notes
 
-Most of tese functions will accept variables _v_ that are a subtype of Real for which `convert`(`Float64`, _v_ ) is defined  
+Most of these functions will accept variables _v_ that are a subtype of Real for which `convert`(`Float64`, _v_ ) is defined  
 (The functions of four arguments presuppose uniformly typed built-in AbstractFloats).
